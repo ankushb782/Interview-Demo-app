@@ -1,0 +1,50 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.interview.erakulis.presentation.home.HomeViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".presentation.home.HomeActivity">
+
+        <!-- Retry Button that appears when there's an error -->
+        <Button
+            android:id="@+id/retryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/errorTextView"
+            android:text="Retry"
+            android:onClick="@{() -> viewModel.retry()}"
+             />
+
+        <!-- Error TextView when the images fail to load -->
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/retryButton"
+            android:text="@{viewModel.imageList.errorMessage}"
+            android:textColor="@android:color/holo_red_dark"
+            />
+
+        <!-- Image List RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageListRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/errorTextView"
+            />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+</layout>

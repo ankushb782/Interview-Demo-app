@@ -1,0 +1,103 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.interview.erakulis.presentation.image_detail.ImageDetailViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".presentation.ImageDetailActivity">
+
+        <!-- Loading ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+        <!-- Error Message -->
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@{viewModel.imageDetailState instanceof com.interview.erakulis.presentation.image_detail.ImageDetailState.Error ? viewModel.imageDetailState.message : ''}"
+            android:textColor="@android:color/holo_red_dark"/>
+
+        <!-- Image Details Section 1 -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/progressBar" />
+
+        <TextView
+            android:id="@+id/sizeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:text="@{viewModel.imageDetailState.imageDetail.size}" />
+
+        <TextView
+            android:id="@+id/typeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sizeTextView"
+            android:text="@{viewModel.imageDetailState.imageDetail.type}" />
+
+        <TextView
+            android:id="@+id/tagsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/typeTextView"
+            android:text="@{viewModel.imageDetailState.imageDetail.tags}" />
+
+        <!-- Image Details Section 2 -->
+        <TextView
+            android:id="@+id/userNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tagsTextView"
+            android:text="User: @{viewModel.imageDetailState.imageDetail.user}" />
+
+        <TextView
+            android:id="@+id/viewsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userNameTextView"
+            android:text="Views: @{viewModel.imageDetailState.imageDetail.views}" />
+
+        <TextView
+            android:id="@+id/likesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewsTextView"
+            android:text="Likes: @{viewModel.imageDetailState.imageDetail.likes}" />
+
+        <TextView
+            android:id="@+id/commentsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/likesTextView"
+            android:text="Comments: @{viewModel.imageDetailState.imageDetail.comments}" />
+
+        <TextView
+            android:id="@+id/favoritesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/commentsTextView"
+            android:text="Favorites: @{viewModel.imageDetailState.imageDetail.favorites}" />
+
+        <TextView
+            android:id="@+id/downloadsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/favoritesTextView"
+            android:text="Downloads: @{viewModel.imageDetailState.imageDetail.downloads}" />
+    </RelativeLayout>
+</layout>

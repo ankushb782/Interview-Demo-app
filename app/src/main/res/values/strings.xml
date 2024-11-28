@@ -1,0 +1,47 @@
+<resources>
+    <!-- App name -->
+    <string name="app_name">Erakulis</string>
+
+    <!-- Login Screen -->
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="login_error_invalid_email">Please enter a valid email address.</string>
+    <string name="login_error_invalid_password">Password must be between 6 and 12 characters.</string>
+    <string name="login_error_generic">Login failed. Please try again.</string>
+    <string name="login_register_prompt">Don\'t have an account? Register here</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Register</string>
+    <string name="register_button">Register</string>
+    <string name="email_error">Please enter a valid email address.</string>
+    <string name="password_error">Password must be between 6 and 12 characters long.</string>
+    <string name="age_error">Age must be between 18 and 99 years old.</string>
+    <string name="register_success_message">Registration successful! You can now login.</string>
+    <string name="register_error_generic">Registration failed. Please try again.</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Home</string>
+    <string name="home_loading">Loading images...</string>
+    <string name="no_images_found">No images available at the moment.</string>
+
+    <!-- Image Details Screen -->
+    <string name="image_details_title">Image Details</string>
+    <string name="image_size">Size: %1$s</string>
+    <string name="image_type">Type: %1$s</string>
+    <string name="image_tags">Tags: %1$s</string>
+    <string name="image_user">Uploaded by: %1$s</string>
+    <string name="image_views">Views: %1$d</string>
+    <string name="image_likes">Likes: %1$d</string>
+    <string name="image_comments">Comments: %1$d</string>
+    <string name="image_favorites">Favorites: %1$d</string>
+    <string name="image_downloads">Downloads: %1$d</string>
+
+    <!-- General Error Messages -->
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_generic">An error occurred. Please try again later.</string>
+
+    <!-- Placeholder for any other generic strings -->
+    <string name="placeholder">Placeholder text</string>
+</resources>
